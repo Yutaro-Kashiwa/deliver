@@ -11,13 +11,13 @@
 	<script type="text/javascript">
         $(function(){
     		if (navigator.geolocation) {
-    			navigator.geolocation.getCurrentPosition(show_map, null);
+    			navigator.geolocation.getCurrentPosition(show_location, null);
     		} else {
     			alert("not supported");
     		};
     	});
     
-    	function show_map(position) {
+    	function show_location(position) {
     		var latitude = position.coords.latitude;
     		var longitude = position.coords.longitude;
     		$('#msg').val(latitude + " " + longitude);
