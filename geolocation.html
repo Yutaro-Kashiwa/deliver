@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>Geolocation trial</title>
+
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(show_map, null);
+		} else {
+			alert("not supported");
+		};
+	});
+
+	function show_map(position) {
+		var latitude = position.coords.latitude;
+		var longitude = position.coords.longitude;
+		$('#msg').val(latitude + " " + longitude);
+	}
+	</script>
+</head>
+
+<body>
+	<input id="msg" type="text"></input>
+</body>
+
+</html>
