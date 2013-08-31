@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-
-	<title>Geolocation trial</title>
-
-	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript">
-        $(function(){
-    		if (navigator.geolocation) {
-    			navigator.geolocation.getCurrentPosition(show_location, null);
-    		} else {
-    			alert("not supported");
-    		};
-    	});
     
-    	function show_location(position) {
-    		var latitude = position.coords.latitude;
-    		var longitude = position.coords.longitude;
-    		$('#msg').val(latitude + " " + longitude);
-    	}
-	</script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Geolocation trial</title>
+    </head>
+    
+    <body>
+        <input id="msg" type="text"></input>
+        
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(show_location, null);
+                }
+                else {
+                    alert("not supported");
+                };
+            });
 
-<body>
-	<input id="msg" type="text"></input>
-</body>
+            function show_location(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                $('#msg').val(latitude + " " + longitude);
+            }
+        </script>
+    </body>
 
 </html>
