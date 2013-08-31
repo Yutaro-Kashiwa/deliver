@@ -9,9 +9,9 @@ $(function() {
 });
 
 function show_location(position) {
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
-    $('#msg').val(latitude + " " + longitude);
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+    $('#msg').val(lat + " " + lon);
 }
 
 function show_error(error) {
