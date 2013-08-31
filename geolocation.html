@@ -9,24 +9,8 @@
     
     <body>
         <input id="msg" type="text"></input>
-        
-        <script src="https://code.jquery.com/jquery.min.js"></script>
-        <script type="text/javascript">
-            $(function() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(show_location, null);
-                }
-                else {
-                    alert("not supported");
-                };
-            });
-
-            function show_location(position) {
-                var latitude = position.coords.latitude;
-                var longitude = position.coords.longitude;
-                $('#msg').val(latitude + " " + longitude);
-            }
-        </script>
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="js/geolocation.js"></script>
     </body>
 
 </html>
